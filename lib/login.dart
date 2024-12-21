@@ -215,7 +215,7 @@ class _LoginState extends State<Login> {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                           content: Text(
-                                              "Veuillez saisir le login ou le motde passe")));
+                                              "Veuillez saisir le login ou le motde passe !")));
                                 }
                                 if (email.text == "example@gmail.com" &&
                                     password.text == "A4!g|s@8") {
