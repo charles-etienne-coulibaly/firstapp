@@ -3,5 +3,6 @@ class Planning {
   final String lieu;
   final String description;
   final String date;
-  Planning(this.titre, this.lieu, this.description, this.date);
+  final String imageUrl;
+  Planning(this.titre, this.lieu, this.description, this.date, this.imageUrl);
 }
