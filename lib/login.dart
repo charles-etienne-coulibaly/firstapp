@@ -20,9 +20,9 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Stack(children: [
       FadeInUp(
-        duration: Duration(milliseconds: 1600),
+        duration: const Duration(milliseconds: 1600),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("images/fond.jpg"), fit: BoxFit.cover)),
           child: Scaffold(
@@ -31,14 +31,14 @@ class _LoginState extends State<Login> {
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
-                  Row(),
+                  const Row(),
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(microseconds: 1600),
+                          duration: const Duration(microseconds: 1600),
                           child: Image.asset(
                             'images/proxy-image.png',
                             height: 200,
@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Text(
                             "Bienvenue !",
                             style: GoogleFonts.poppins(
@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Text("Connectez-vous à votre compte",
                               style: GoogleFonts.poppins(
                                   fontSize: 13,
@@ -71,14 +71,14 @@ class _LoginState extends State<Login> {
                                   color: Colors.black87)))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Stack(
                     children: [
-                      Row(),
+                      const Row(),
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Text(
                             "Email",
                             style: GoogleFonts.poppins(
@@ -86,12 +86,12 @@ class _LoginState extends State<Login> {
                           ))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Stack(children: [
                     FadeInUp(
-                      duration: Duration(milliseconds: 1600),
+                      duration: const Duration(milliseconds: 1600),
                       child: SizedBox(
                         height: 50,
                         child: TextFormField(
@@ -116,14 +116,14 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ]),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Stack(
                     children: [
-                      Row(),
+                      const Row(),
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Text(
                             "Mot de passe",
                             style: GoogleFonts.poppins(
@@ -131,12 +131,12 @@ class _LoginState extends State<Login> {
                           ))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Stack(children: [
                     FadeInUp(
-                      duration: Duration(milliseconds: 1600),
+                      duration: const Duration(milliseconds: 1600),
                       child: SizedBox(
                         height: 50,
                         child: TextFormField(
@@ -152,8 +152,8 @@ class _LoginState extends State<Login> {
                                 onTap: () => setState(
                                     () => Pwdvisiblity = !Pwdvisiblity),
                                 child: Pwdvisiblity
-                                    ? Icon(Icons.visibility_off)
-                                    : Icon(Icons.visibility),
+                                    ? const Icon(Icons.visibility_off)
+                                    : const Icon(Icons.visibility),
                                 /*child: Icon(
                                   Pwdvisiblity
                                       ? Icons.visibility
@@ -171,16 +171,16 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ]),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Row(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 200,
                               ),
                               Text(
@@ -192,13 +192,13 @@ class _LoginState extends State<Login> {
                           ))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: ElevatedButton(
                               style: ButtonStyle(
                                   shape: WidgetStatePropertyAll(
@@ -206,26 +206,26 @@ class _LoginState extends State<Login> {
                                           borderRadius:
                                               BorderRadius.circular(30))),
                                   fixedSize:
-                                      WidgetStatePropertyAll(Size(200, 30)),
+                                      const WidgetStatePropertyAll(Size(200, 30)),
                                   backgroundColor: WidgetStatePropertyAll(
                                       Colors.blue.shade800)),
                               onPressed: () {
                                 if (email.text.isEmpty ||
                                     password.text.isEmpty) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                           content: Text(
                                               "Veuillez saisir le login ou le motde passe !")));
                                 }
                                 if (email.text == "example@gmail.com" &&
                                     password.text == "A4!g|s@8") {
-                                  Navigator.push(context,
+                                  Navigator.pushReplacement(context,
                                       MaterialPageRoute(builder: (context) {
                                     return const Home();
                                   }));
                                 } else {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
+                                      const SnackBar(
                                           content: Text(
                                               "Login ou mot de passe incorect")));
                                 }
@@ -240,16 +240,16 @@ class _LoginState extends State<Login> {
                               )))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Stack(
                     children: [
                       FadeInUp(
-                        duration: Duration(milliseconds: 1600),
+                        duration: const Duration(milliseconds: 1600),
                         child: Row(
                           children: [
-                            Expanded(
+                            const Expanded(
                                 child: Divider(
                               endIndent: 12,
                               color: Colors.black,
@@ -258,7 +258,7 @@ class _LoginState extends State<Login> {
                               "Ou",
                               style: GoogleFonts.poppins(),
                             ),
-                            Expanded(
+                            const Expanded(
                                 child: Divider(
                               indent: 12,
                               color: Colors.black,
@@ -268,33 +268,36 @@ class _LoginState extends State<Login> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.grey.shade200),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Image.asset("images/google.png"),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: MediaQuery.of(context).size.height,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.grey.shade200),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Image.asset("images/google.png"),
+                                  ),
                                 ),
                               ),
-                              SizedBox(
+                              /*const SizedBox(
                                 width: 22,
-                              ),
+                              ),*/
                               Container(
-                                height: 50,
-                                width: 50,
+                                height: MediaQuery.of(context).size.height,
+                                width: MediaQuery.of(context).size.width,
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Colors.grey.shade200),
@@ -303,31 +306,34 @@ class _LoginState extends State<Login> {
                                   child: Image.asset("images/facebook.png"),
                                 ),
                               ),
-                              SizedBox(
+                              /*const SizedBox(
                                 width: 22,
-                              ),
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.grey.shade200),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Image.asset("images/apple.png"),
+                              ),*/
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: MediaQuery.of(context).size.height,
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.grey.shade200),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10),
+                                    child: Image.asset("images/apple.png"),
+                                  ),
                                 ),
                               )
                             ],
                           ))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Stack(
                     children: [
                       FadeInUp(
-                          duration: Duration(milliseconds: 1600),
+                          duration: const Duration(milliseconds: 1600),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -338,7 +344,7 @@ class _LoginState extends State<Login> {
                                     fontSize: 13,
                                     color: Colors.blue.shade500),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               Text(
@@ -353,7 +359,7 @@ class _LoginState extends State<Login> {
                           ))
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   )
                 ],

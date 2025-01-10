@@ -17,7 +17,7 @@ class PlanningWidget extends StatelessWidget {
         print("Ecole");
       },
       child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Card(
           elevation: 15,
           child: Container(
@@ -33,13 +33,13 @@ class PlanningWidget extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      image: new DecorationImage(
+                      image: DecorationImage(
                           image: AssetImage(planning.imageUrl),
                           fit: BoxFit.cover)),
                 ),
                 title: Text(
                   planning.titre,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),

@@ -1,3 +1,5 @@
+import 'package:firstapp/app2/home2.dart';
+import 'package:firstapp/home.dart';
 import 'package:firstapp/login.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Login(),
+      home: const Home2(),
     );
   }
 }
