@@ -13,11 +13,12 @@ class PlanningWidget extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => PlanningDetails(planning: planning)));
-        print("Ecole");
+                builder: (context) => PlanningDetails(planning: planning)/*Retourne le widget PlanningDetails()*/));
+        print("Ecole");//Afficher dans le terminal après un clique
       },
       child: Padding(
         padding: const EdgeInsets.all(8),
+        //Card
         child: Card(
           elevation: 15,
           child: Container(
@@ -28,6 +29,7 @@ class PlanningWidget extends StatelessWidget {
                 color: Colors.cyan.shade500,
               ),
               child: ListTile(
+                //Image du card
                 leading: Container(
                   height: 50,
                   width: 50,
@@ -37,6 +39,7 @@ class PlanningWidget extends StatelessWidget {
                           image: AssetImage(planning.imageUrl),
                           fit: BoxFit.cover)),
                 ),
+                //Titre du card
                 title: Text(
                   planning.titre,
                   style: const TextStyle(
@@ -44,7 +47,9 @@ class PlanningWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                //Date du card
                 subtitle: Text(planning.date),
+                //Lieu du card
                 trailing: Text(planning.lieu),
               )),
         ),

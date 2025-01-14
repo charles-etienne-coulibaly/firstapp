@@ -10,12 +10,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int selectedItem = 0;
+  int selectedItem = 0;/*La variable selectedItem sera utiliser pour changer l'index
+   de notre tableau, par exemple en java
+   String[] seasons = new String {"Winter", "Spring", "Summer", "Autumn"};
+   avec index 0 pour "Winter", index 1 pour "Spring", index 2 pour "Summer", index 3 pour"Autumn" */
   List<Widget> pages = [
-    Accueil(),
+    Accueil(),//Page d'accueil
     Center(child: Text("Planning")),
     Center(child: Text("A propos")),
   ];
+  //Fonction pour attribuer à selectedItem la valeur de l'index du navigation sélectionner
   void cliqueNavigation(int index) {
     setState(() {
       selectedItem = index;
@@ -26,9 +30,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Menu hamburger
       drawer: Drawer(
         child: Column(
           children: [
+            //Logo facebook
             Container(
               width: 150,
               height: 150,
@@ -37,22 +43,26 @@ class _HomeState extends State<Home> {
                     DecorationImage(image: AssetImage("images/facebook.png")),
               ),
             ),
+            //Email
             Center(
               child: Text("user@gmail.com"),
             ),
+            //InkWell() rend l'élément cliquable
             InkWell(
+              //Return home page
               onTap: () {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) {
                   return const Home();
                 }));
               },
+              //Elément élément avec son icon
               child: ListTile(
                 title: Text("Home"),
                 leading: Icon(Icons.home),
               ),
             ),
-            Divider(),
+            Divider(),//Barre de séparation
             InkWell(
               onTap: () {
                 Navigator.pushReplacement(context,
@@ -95,9 +105,10 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      //Les bouttons de navigation
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: selectedItem,
-          onTap: cliqueNavigation,
+          currentIndex: selectedItem,//Boutton actuelle sélectionner
+          onTap: cliqueNavigation,//Utilise la fonction cliqueNavigation
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(icon: Icon(Icons.list), label: "Planning"),
@@ -120,7 +131,7 @@ class _HomeState extends State<Home> {
         elevation: 10,
         backgroundColor: Colors.cyan,
       ),
-      body: pages[selectedItem],
+      body: pages[selectedItem],//Affiche le contenu de la liste List<Widget> pages[] en fonction de la valeur de selectedItem
     );
   }
 }

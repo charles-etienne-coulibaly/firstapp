@@ -10,7 +10,9 @@ class Accueil extends StatefulWidget {
 }
 
 class _AccueilState extends State<Accueil> {
+  //Liste utilisant la classe Planning de planning.dart
   List<Planning> datas = [
+    //Object of Planning class
     Planning("Anglais", "maison", "description english", "12/12/2024",
         "images/apple.png"),
     Planning("Anglais1", "maison1", "description english1", "19/12/2024",
@@ -40,12 +42,12 @@ class _AccueilState extends State<Accueil> {
         "03/01/2025",
         "images/proxy-image.png"),
   ];
-  int selectedItem = 0;
+  /*int selectedItem = 0;
   List<Widget> pages = [
     Accueil(),
     Center(child: Text("Planning")),
     Center(child: Text("A propos")),
-  ];
+  ];*/
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class _AccueilState extends State<Accueil> {
         body: ListView.builder(
             itemCount: datas.length,
             itemBuilder: (context, int index) {
-              return PlanningWidget(planning: datas[index]);
+              return PlanningWidget(planning: datas[index]);//Retourne les card de planning en passant en paramètre List<Planning> datas
             }));
   }
 }

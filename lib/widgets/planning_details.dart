@@ -8,6 +8,7 @@ class PlanningDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Titre du planning
       appBar: AppBar(
           centerTitle: true,
           title: Text(
@@ -15,6 +16,7 @@ class PlanningDetails extends StatelessWidget {
           )),
       body: ListView(
         children: [
+          //Image du planning
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
@@ -38,6 +40,7 @@ class PlanningDetails extends StatelessWidget {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
+          //Date et lieu du planning
           Text("${planning.date} - ${planning.lieu}"),
         ],
       ),
